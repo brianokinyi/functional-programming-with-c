@@ -13,9 +13,12 @@ int main() {
     // if return value of fork == 0 then we are in the child process
     // return > 0 we are in the parent process
     // return < 0 fork() was not successfull 
-    if(child!=0){
+    if(child>0){
         printf("I am the parent process\n");
-    }else{
+    }else if(child<0){
+        printf("Fork system call was unsuccessfull\n");
+    }
+    else{
         printf("I am the child process\n");
     }
 }
