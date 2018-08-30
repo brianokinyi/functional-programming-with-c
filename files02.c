@@ -15,6 +15,16 @@ int main() {
         printf("%c", c);
         c = fgetc(fp);
     }
+    printf("\n");
+
+    // 
+    printf("Read file line by line\n");
+
+    char line[128];
+
+    while(fgets(line, sizeof line, fp) != NULL){
+        fputs(line, stdout);
+    }
 
     fclose(fp);
     return 0;
